@@ -1,0 +1,6 @@
+Subfunctions to be performed:
+*Scan list items into String[]
+*Prompt user for name of a team to search
+*Iterate through array of names and count the number of instances
+*Display results to user
+*Ask user if they want to search another team name

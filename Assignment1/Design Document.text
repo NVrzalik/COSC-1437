@@ -1,0 +1,27 @@
+Class Coin
+
+*Fields
+** -String sideUp
+
+
+*Methods
+** +Coin()
+** +toss()
+** +getSideUp() : String
+
+
+
+
+Class a1main
+
+*Fields
+** Coin quarter
+** Coin dime
+** Coin nickel
+** int balance
+** int turns
+
+*Methods
+** main()
+** takeTurn()
+** gameEnd()
