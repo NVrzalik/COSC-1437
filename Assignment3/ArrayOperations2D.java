@@ -30,4 +30,26 @@ class ArrayOperations2D
     double average = (total / 1.0) / count;
     return average;
   }
+
+
+  public static int getRowTotal(int[][] array, int subscript) throws
+  IllegalArgumentException
+  {
+    if(subscript !< array.length)
+    {
+      throw new IllegalArgumentException("Given subscript does not exist");
+    }
+    if(subscript < 0)
+    {
+      throw new IllegalArgumentException("Negative subscript")
+    }
+
+    int total = 0;
+    for(int i = 0; i < array[subscript].length; i++)
+    {
+      total += array[subscript][i];
+    }
+
+    return total;
+  }
 }
