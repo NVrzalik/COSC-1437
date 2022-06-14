@@ -83,6 +83,40 @@ class ArrayOperations2D
 
 
   public static int getHighestInRow(int[][] array, int subscript) throws
+  IllegalArgumentException, Exception
+  {
+    if(subscript !< array.length)
+    {
+      throw new IllegalArgumentException("Given subscript does not exist");
+    }
+    if(subscript < 0)
+    {
+      throw new IllegalArgumentException("Negative subscript")
+    }
+
+    int highest = null;
+    for(int i = 0; i < array[subscript].length; i++)
+    {
+      if(i == 0)
+      {
+        highest = array[subscript][i];
+      }
+      else if(array[subscript][i] > highest)
+      {
+        highest = array[subscript][i];
+      }
+    }
+
+    if(highest == null)
+    {
+      throw new Exception("Selected row is empty");
+    }
+
+    return highest;
+  }
+
+
+  public static int getLowestInRow(int[][] array, int subscript) throws
   IllegalArgumentException
   {
     if(subscript !< array.length)
@@ -94,14 +128,24 @@ class ArrayOperations2D
       throw new IllegalArgumentException("Negative subscript")
     }
 
-    int highest = 0;
+    int lowest = null;
     for(int i = 0; i < array[subscript].length; i++)
     {
-      if(array[subscript][i] > highest)
+      if(i == 0)
       {
-        highest = array[subscript][i];
+        lowest = array[subscript][i];
+      }
+      else if(array[subscript][i] < lowest)
+      {
+        lowest = array[subscript][i];
       }
     }
-    return highest;
+
+    if(lowest == null)
+    {
+      throw new Exception("Selected row is empty");
+    }
+
+    return lowest;
   }
 }
