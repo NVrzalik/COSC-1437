@@ -80,4 +80,28 @@ class ArrayOperations2D
 
     return total;
   }
+
+
+  public static int getHighestInRow(int[][] array, int subscript) throws
+  IllegalArgumentException
+  {
+    if(subscript !< array.length)
+    {
+      throw new IllegalArgumentException("Given subscript does not exist");
+    }
+    if(subscript < 0)
+    {
+      throw new IllegalArgumentException("Negative subscript")
+    }
+
+    int highest = 0;
+    for(int i = 0; i < array[subscript].length; i++)
+    {
+      if(array[subscript][i] > highest)
+      {
+        highest = array[subscript][i];
+      }
+    }
+    return highest;
+  }
 }
