@@ -52,4 +52,32 @@ class ArrayOperations2D
 
     return total;
   }
+
+
+  public static int getColumnTotal(int[][] array, int subscript) throws
+  IllegalArgumentException
+  {
+    if(subscript < 0)
+    {
+      throw new IllegalArgumentException("Negative subscript")
+    }
+
+    int total = 0;
+    boolean error = true;
+    for(int i = 0; i < array.length; i++)
+    {
+      if(subscript < array[i].length)
+      {
+        total += array[i][subscript];
+        error = false;
+      }
+    }
+
+    if(error == true)
+    {
+      throw new IllegalArgumentException("Given subscript does not exist.");
+    }
+
+    return total;
+  }
 }
