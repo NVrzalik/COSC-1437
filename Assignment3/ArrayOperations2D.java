@@ -10,7 +10,7 @@ class ArrayOperations2D
     {
       for(int j = 0; j < array[i].length; j++)
       {
-        total += testArray[i][j];
+        total += array[i][j];
       }
     }
     return total;
@@ -35,13 +35,13 @@ class ArrayOperations2D
   public static int getRowTotal(int[][] array, int subscript) throws
   IllegalArgumentException
   {
-    if(subscript !< array.length)
+    if(subscript >= array.length)
     {
       throw new IllegalArgumentException("Given subscript does not exist");
     }
     if(subscript < 0)
     {
-      throw new IllegalArgumentException("Negative subscript")
+      throw new IllegalArgumentException("Negative subscript");
     }
 
     int total = 0;
@@ -59,7 +59,7 @@ class ArrayOperations2D
   {
     if(subscript < 0)
     {
-      throw new IllegalArgumentException("Negative subscript")
+      throw new IllegalArgumentException("Negative subscript");
     }
 
     int total = 0;
@@ -83,23 +83,25 @@ class ArrayOperations2D
 
 
   public static int getHighestInRow(int[][] array, int subscript) throws
-  IllegalArgumentException, Exception
+  IllegalArgumentException
   {
-    if(subscript !< array.length)
+    if(subscript >= array.length)
     {
       throw new IllegalArgumentException("Given subscript does not exist");
     }
     if(subscript < 0)
     {
-      throw new IllegalArgumentException("Negative subscript")
+      throw new IllegalArgumentException("Negative subscript");
     }
 
-    int highest = null;
+    int highest;
+    boolean flag = true;
     for(int i = 0; i < array[subscript].length; i++)
     {
       if(i == 0)
       {
         highest = array[subscript][i];
+        flag = false;
       }
       else if(array[subscript][i] > highest)
       {
@@ -107,7 +109,7 @@ class ArrayOperations2D
       }
     }
 
-    if(highest == null)
+    if(flag == false)
     {
       throw new Exception("Selected row is empty");
     }
@@ -119,13 +121,13 @@ class ArrayOperations2D
   public static int getLowestInRow(int[][] array, int subscript) throws
   IllegalArgumentException
   {
-    if(subscript !< array.length)
+    if(subscript >= array.length)
     {
       throw new IllegalArgumentException("Given subscript does not exist");
     }
     if(subscript < 0)
     {
-      throw new IllegalArgumentException("Negative subscript")
+      throw new IllegalArgumentException("Negative subscript");
     }
 
     int lowest = null;
