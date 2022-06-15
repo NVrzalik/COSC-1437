@@ -17,7 +17,7 @@ class ArrayOperations2D
   }
 
 
-  public static double getAverage(int[][] array)
+  public static double getAverage(int[][] array) throws Exception
   {
     int total = getTotal(array);
     int count = 0;
@@ -25,6 +25,11 @@ class ArrayOperations2D
     for(int i = 0; i < array.length; i++)
     {
       count += array[i].length;
+    }
+
+    if(count == 0)
+    {
+      throw new Exception("Array is empty");
     }
 
     double average = (total / 1.0) / count;
@@ -83,7 +88,7 @@ class ArrayOperations2D
 
 
   public static int getHighestInRow(int[][] array, int subscript) throws
-  IllegalArgumentException
+  Exception, IllegalArgumentException
   {
     if(subscript >= array.length)
     {
@@ -93,25 +98,18 @@ class ArrayOperations2D
     {
       throw new IllegalArgumentException("Negative subscript");
     }
-
-    int highest;
-    boolean flag = true;
-    for(int i = 0; i < array[subscript].length; i++)
-    {
-      if(i == 0)
-      {
-        highest = array[subscript][i];
-        flag = false;
-      }
-      else if(array[subscript][i] > highest)
-      {
-        highest = array[subscript][i];
-      }
-    }
-
-    if(flag == false)
+    if(array[subscript] == null)
     {
       throw new Exception("Selected row is empty");
+    }
+
+    int highest = array[subscript][0];
+    for(int i = 1; i < array[subscript].length; i++)
+    {
+      if(array[subscript][i] > highest)
+      {
+        highest = array[subscript][i];
+      }
     }
 
     return highest;
@@ -119,7 +117,7 @@ class ArrayOperations2D
 
 
   public static int getLowestInRow(int[][] array, int subscript) throws
-  IllegalArgumentException
+  Exception, IllegalArgumentException
   {
     if(subscript >= array.length)
     {
@@ -129,23 +127,18 @@ class ArrayOperations2D
     {
       throw new IllegalArgumentException("Negative subscript");
     }
-
-    int lowest = null;
-    for(int i = 0; i < array[subscript].length; i++)
-    {
-      if(i == 0)
-      {
-        lowest = array[subscript][i];
-      }
-      else if(array[subscript][i] < lowest)
-      {
-        lowest = array[subscript][i];
-      }
-    }
-
-    if(lowest == null)
+    if(array[subscript] == null)
     {
       throw new Exception("Selected row is empty");
+    }
+
+    int lowest = array[subscript][0];
+    for(int i = 1; i < array[subscript].length; i++)
+    {
+      if(array[subscript][i] < lowest)
+      {
+        lowest = array[subscript][i];
+      }
     }
 
     return lowest;

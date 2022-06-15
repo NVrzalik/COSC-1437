@@ -8,7 +8,7 @@ class a3main
   static final int MAX_LENGTH = 10;
   static final int MAX_VALUE = 50;
 
-  public static void main(String[] args)
+  public static void main(String[] args) throws Exception
   {
     firstDLength = ThreadLocalRandom.current().nextInt(MAX_LENGTH + 1);
     testArray = new int[firstDLength][];
@@ -33,9 +33,9 @@ class a3main
 
     System.out.println("Total of all array elements is: " + ArrayOperations2D.getTotal(testArray));
     System.out.println("Average of all array elements is: " + ArrayOperations2D.getAverage(testArray));
-    System.out.println("Total of elements in row " + 1 + ": " + ArrayOperations2D.getRowTotal(testArray, 1));
-    System.out.println("Total of elements in column " + 1 + ": " + ArrayOperations2D.getColumnTotal(testArray, 1));
-    System.out.println("Greatest element in row " + 1 + ": " + ArrayOperations2D.getHighestInRow(testArray, 1));
-    System.out.println("Lowest element in row " + 1 + ": " + ArrayOperations2D.getLowestInRow(testArray, 1));
+    System.out.println("Total of elements in row " + 1 + ": " + ArrayOperations2D.getRowTotal(testArray, 5));
+    System.out.println("Total of elements in column " + 1 + ": " + ArrayOperations2D.getColumnTotal(testArray, 5));
+    System.out.println("Greatest element in row " + 1 + ": " + ArrayOperations2D.getHighestInRow(testArray, 5));
+    System.out.println("Lowest element in row " + 1 + ": " + ArrayOperations2D.getLowestInRow(testArray, 5));
   }
 }
