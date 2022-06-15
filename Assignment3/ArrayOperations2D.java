@@ -17,7 +17,7 @@ class ArrayOperations2D
   }
 
 
-  public static double getAverage(int[][] array) throws Exception
+  public static double getAverage(int[][] array)
   {
     int total = getTotal(array);
     int count = 0;
@@ -29,11 +29,13 @@ class ArrayOperations2D
 
     if(count == 0)
     {
-      throw new Exception("Array is empty");
+      return 0;
     }
-
-    double average = (total / 1.0) / count;
-    return average;
+    else
+    {
+      double average = (total / 1.0) / count;
+      return average;
+    }
   }
 
 
