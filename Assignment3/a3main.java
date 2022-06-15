@@ -46,6 +46,7 @@ class a3main
         }
       }
     }
+    System.out.println();
     //Call each ArrayOperations2D class method, and display the results
     displayTotal();
     displayAverage();
