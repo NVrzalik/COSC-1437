@@ -1,0 +1,16 @@
+Class ArrayOperations2D
+
+*Methods
+
+** +getTotal(int[][]) : int
+** +getAverage(int[][]) : double
+** +getRowTotal(int[][], int) : int
+** +getColumnTotal(int[][], int) : int
+** +getHighestInRow(int[][], int) : int
+** +getLowestInRow(int[][], int) : int
+
+
+
+Class a3main
+*Generate random, jagged, 2D integer array for testing
+*Pass array to each method of ArrayOperations2D, then display the results
