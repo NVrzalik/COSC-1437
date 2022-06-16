@@ -23,10 +23,23 @@ class FuelGauge
 
   public void useFuel() throws Exception
   {
-    if(currentFuelAmount == 0)
+    if(this.isEmpty())
     {
       throw new Exception("Fuel tank is empty; no fuel can be used");
     }
     currentFuelAmount--;
+  }
+
+
+  public boolean isEmpty()
+  {
+    if(currentFuelAmount == 0)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
 }
