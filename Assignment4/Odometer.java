@@ -6,16 +6,9 @@ class Odometer
   private FuelGauge fuelGauge;
 
 
-  public Odometer() throws Exception
+  public Odometer(FuelGauge fuelGauge)
   {
-    try
-    {
-      fuelGauge = new FuelGauge();
-    }
-    catch(Exception e)
-    {
-      throw new Exception("FuelGauge class could not be located", e);
-    }
+    this.fuelGauge = fuelGauge;
   }
 
 
@@ -76,6 +69,7 @@ class Odometer
   {
     if(fuelGauge.isEmpty())
     {
+      this.resetFuelMileCounter();
       throw new Exception("Fuel tank is empty; mile could not be driven");
     }
     this.addMile();

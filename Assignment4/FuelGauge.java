@@ -42,4 +42,17 @@ class FuelGauge
       return false;
     }
   }
+
+
+  public boolean isFull()
+  {
+    if(currentFuelAmount == MAX_FUEL)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
 }
