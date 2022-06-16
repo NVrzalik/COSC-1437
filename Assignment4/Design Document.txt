@@ -1,0 +1,32 @@
+Class FuelGauge
+
+*Attributes
+** -int currentFuelAmount
+** -final int MAX_FUEL
+
+*Methods
+** +getCurrentFuelAmount() : int
+** +addFuel()
+** +useFuel()
+(fuel will only be represented and manipulated in integer gallons) 
+
+
+Class Odometer
+
+*Attributes
+** -int mileage
+** -final int MAX_MILEAGE
+** -final int MILES_PER_GALLON
+** -int fuelMileCounter
+
+*Methods
+** +getMileage() : int
+** +addMile()
+** +resetOdometer()
+** +adjustFuelGauge()
+
+
+Class a4main
+*Fill up the car
+*Drive the car until empty
+	**Print the mileage and amount of fuel (in integer gallons, rounded up) at every mile driven
