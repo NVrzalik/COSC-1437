@@ -5,8 +5,8 @@ class a4main
 
   public static void main(String[] args)
   {
-    FuelGauge fuelGauge = new FuelGauge();
-    Odometer odometer = new Odometer(fuelGauge);
+    fuelGauge = new FuelGauge();
+    odometer = new Odometer(fuelGauge);
 
     fillCar();
 
