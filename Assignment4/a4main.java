@@ -29,7 +29,7 @@ class a4main
   the FuelGauge class' isFull(), addFuel(), and getCurrentFuelAmount() methods.
   The method also contains logic to correctly format the status updates printed
   while filling the fuel tank.*/
-  public static void fillFuelTank()
+  static void fillFuelTank()
   {
     System.out.println("Filling the fuel tank...");
     while(!fuelGauge.isFull())
@@ -61,7 +61,7 @@ class a4main
   specifications, the current mileage of the odometer and the approximate
   number of gallons of fuel remaining in the fuel tank are displayed for every
   mile driven.*/
-  public static void driveCar()
+  static void driveCar()
   {
     System.out.println("Going for a drive...");
     while(!fuelGauge.isEmpty())
