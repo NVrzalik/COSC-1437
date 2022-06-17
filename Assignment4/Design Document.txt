@@ -8,7 +8,10 @@ Class FuelGauge
 ** +getCurrentFuelAmount() : int
 ** +addFuel()
 ** +useFuel()
-(fuel will only be represented and manipulated in integer gallons) 
+(fuel will only be represented and manipulated in integer gallons)
+** +isEmpty() : boolean
+** +isFull() : boolean
+
 
 
 Class Odometer
@@ -18,12 +21,18 @@ Class Odometer
 ** -final int MAX_MILEAGE
 ** -final int MILES_PER_GALLON
 ** -int fuelMileCounter
+** -FuelGauge fuelGauge
 
 *Methods
+** +Odometer(FuelGauge)
 ** +getMileage() : int
-** +addMile()
-** +resetOdometer()
-** +adjustFuelGauge()
+** -getFuelMileCounter() : int
+** -addMile()
+** -addFuelMileCounter()
+** -resetOdometer()
+** -resetFuelMileCounter()
+** +driveMile()
+
 
 
 Class a4main
