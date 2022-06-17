@@ -10,12 +10,13 @@ class a4main
 
     fillCar();
 
+    System.out.println("Going for a drive...");
     while(!fuelGauge.isEmpty())
     {
       driveCar();
     }
 
-    System.out.println("The car is out of fuel.");
+    System.out.println("\nThe car is out of fuel.");
   }
 
 
@@ -33,11 +34,18 @@ class a4main
         e.printStackTrace();
         System.exit(1);
       }
-      System.out.println("Fuel tank has " + fuelGauge.getCurrentFuelAmount() +
-        " gallons.");
+      int gallons = fuelGauge.getCurrentFuelAmount();
+      if(gallons == 1)
+      {
+        System.out.println("Fuel tank has " + gallons + " gallon.");
+      }
+      else
+      {
+        System.out.println("Fuel tank has " + gallons + " gallons.");
+      }
     }
 
-    System.out.println("The fuel tank is full.");
+    System.out.println("The fuel tank is full.\n");
   }
 
 
@@ -52,8 +60,8 @@ class a4main
       e.printStackTrace();
       System.exit(1);
     }
-    System.out.println("Car odometer: " + odometer.getMileage() + " miles" +
-      "\nApproximate fuel remaining: " + fuelGauge.getCurrentFuelAmount() +
-      " gallons");
+    System.out.println("Car odometer: " + odometer.getMileage() +
+      "\nApproximate gallons of fuel remaining: " +
+      fuelGauge.getCurrentFuelAmount());
   }
 }

@@ -12,7 +12,7 @@ class FuelGauge
 
   public void addFuel() throws Exception
   {
-    if(currentFuelAmount == MAX_FUEL)
+    if(getCurrentFuelAmount() == MAX_FUEL)
     {
       throw new Exception("Fuel tank is already full (or " +
                 "nearly full); no fuel can be added");

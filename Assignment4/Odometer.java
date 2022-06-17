@@ -27,7 +27,7 @@ class Odometer
   private void addMile()
   {
     mileage++;
-    if(this.getMileage() == MAX_MILEAGE)
+    if(this.getMileage() > MAX_MILEAGE)
     {
       this.resetOdometer();
     }
