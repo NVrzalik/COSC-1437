@@ -36,6 +36,12 @@ Class Odometer
 
 
 Class a4main
-*Fill up the car
-*Drive the car until empty
-	**Print the mileage and amount of fuel (in integer gallons, rounded up) at every mile driven
+
+*Attributes
+** FuelGauge fuelGauge
+** Odometer odometer
+
+*Methods
+** main()
+** fillFuelTank()
+** driveCar()
