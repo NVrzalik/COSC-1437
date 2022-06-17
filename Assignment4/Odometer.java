@@ -79,16 +79,16 @@ class Odometer
     }
   }
 
-  /**Private method to reset the fuelMileCounter to 0.*/
-  private void resetFuelMileCounter()
-  {
-    fuelMileCounter = 0;
-  }
-
   /**Private method to reset the odometer to 0.*/
   private void resetOdometer()
   {
     mileage = 0;
+  }
+
+  /**Private method to reset the fuelMileCounter to 0.*/
+  private void resetFuelMileCounter()
+  {
+    fuelMileCounter = 0;
   }
 
   /**Public method to simulate driving the automobile one mile. When called,
