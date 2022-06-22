@@ -1,9 +1,10 @@
-take user input string
-ensure non-empty string ***
-trim the input ***
-convert to stringbuilder ***
-manually spit into tokens by searching for non-alphanumeric characters, removing the word from the stringbuilder and adding it to an ArrayList<String> ***
-add the non-alphanumeric characters after each word ***
-process each element in the ArrayList, converiting it to Pig Latin
-convert the ArrayList to a String
-print the String
+Steps to be taken:
+
+*Take user input string
+*Ensure non-empty string
+*Trim the input
+*Manually split into tokens by searching for non-alphanumeric characters, adding the token to an ArrayList<String>
+*Add the non-alphanumeric characters after each word to the ArrayList for use in the converted string
+*Process each element in the ArrayList, converting it to Pig Latin
+*Convert the ArrayList to a String
+*Print the String
