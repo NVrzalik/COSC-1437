@@ -1,0 +1,101 @@
+Class Person
+*Fields
+** -String firstName
+** -String lastName
+** -String phoneNumber
+** -int final PHONE_NUMBER_LENGTH
+
+*Methods
+** +Person(String firstName, String lastName, String PhoneNumber, String address) : void
+** +Person(String firstName, String lastName, boolean flag, String phoneOrAddress) : void
+** +Person(String firstName, String lastName) : void
+** -nameIsValid(String name) : boolean
+** -phoneNumberIsValid(String phoneNumber) : boolean
+** -addressIsValid(String address) : boolean
+** +setFirstName(String firstName) : void
+** +setLastName(String lastName) : void
+** +setPhoneNumber(String phoneNumber) : void
+** +setAddress(String address) : void
+** +getFirstName() : String
+** +getLastName() : String
+** +getPhoneNumber() : String
+** +getAddress() : String
+
+
+
+Class Customer (extends Person)
+*Fields
+** -boolean mailingList
+** -int customerNumber
+
+*Methods
+** +Customer(String firstName, String lastName, String phoneNumber, int customerNumber, boolean mailingList, String address) : void
+** +Customer(String firstName, String lastName, String phoneNumber, int customerNumber, String address) : void
+** +Customer(String firstName, String lastName, String phoneNumber, int customerNumber) : void
+** +Customer(String firstName, String lastName, int customerNumber, boolean mailingList, String address) : void
+** +Customer(String firstName, String lastName, int customerNumber, String address) : void
+** +Customer(String firstName, String lastName, int customerNumber) : void
+** -customerNumberIsValid(int customerNumber) : boolean
+** +setCustomerNumber(int customerNumber) : void
+** +setMailingList(boolean mailingList) : void
+** +getMailingList() : boolean
+** +getCustomerNumber() : int
+
+
+
+Class PreferredCustomer (extends Customer)
+*Fields
+** -double amountPurchased
+** -int customerLevel
+** -double discountAmount
+** -final double LEVEL_4_PURCHASE_AMOUNT
+** -final double LEVEL_3_PURCHASE_AMOUNT
+** -final double LEVEL_2_PURCHASE_AMOUNT
+** -final double LEVEL_1_PURCHASE_AMOUNT
+** -final double LEVEL_4_DISCOUNT
+** -final double LEVEL_3_DISCOUNT
+** -final double LEVEL_2_DISCOUNT
+** -final double LEVEL_1_DISCOUNT
+
+*Methods
+** +PreferredCustomer(String firstName, String lastName, String phoneNumber, int customerNumber, boolean mailingList, String address, double amountPurchased) : void
+** +PreferredCustomer(String firstName, String lastName, String phoneNumber, int customerNumber, boolean mailingList, String address) : void
+** +PreferredCustomer(String firstName, String lastName, String phoneNumber, int customerNumber, String address, double amountPurchased) : void
+** +PreferredCustomer(String firstName, String lastName, String phoneNumber, int customerNumber, String address) : void
+** +PreferredCustomer(String firstName, String lastName, String phoneNumber, int customerNumber, double amountPurchased) : void
+** +PreferredCustomer(String firstName, String lastName, String phoneNumber, int customerNumber) : void
+** +PreferredCustomer(String firstName, String lastName, int customerNumber, boolean mailingList, String address, double amountPurchased) : void
+** +PreferredCustomer(String firstName, String lastName, int customerNumber, boolean mailingList, String address) : void
+** +PreferredCustomer(String firstName, String lastName, int customerNumber, String address, double amountPurchased) : void
+** +PreferredCustomer(String firstName, String lastName, int customerNumber, String address) : void
+** +PreferredCustomer(String firstName, String lastName, int customerNumber, double amountPurchased) : void
+** +PreferredCustomer(String firstName, String lastName, int customerNumber) : void
+** -amountIsValid(double amount) : boolean
+** +setAmountPurchased(double amountPurchased) : void
+** +addPurchase(double purchaseAmount) : void
+** +getAmountPurchased() : double
+** +getCustomerLevel() : int
+** +getDiscountAmount() : double
+
+
+
+Class a6main
+*Fields
+** -String address
+** -String phoneNumber
+** -String FIRST_NAME
+** -String LAST_NAME
+** -String ADDRESS
+** -int PHONE_NUMBER_LENGTH
+** -int MAX_CUSTOMER_NUMBER
+** -int MAX_NUMBER_OF_PURCHASES
+** -int MAX_PURCHASE_VALUE
+
+*Methods
+** main
+** +generatePreferredCustomer() : PreferredCustomer
+** +generateCustomerNumber() : int
+** +generatePhoneNumber() : boolean
+** +generateAddress() : boolean
+** +generateMailingList() : boolean
+** +getBoolean() : boolean
