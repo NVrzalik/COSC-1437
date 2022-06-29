@@ -4,15 +4,15 @@ abstract class BankAccount
   private int depositCount;
   private int withdrawalCount;
   private double annualInterestRate;
-  private double monthlyServiceCharge;
+  private double periodServiceCharge;
 
   public BankAccount(double balance, double annualInterestRate) throws Exception
   {
-    if(balance !> 0)
+    if(balance <= 0)
     {
-      throw new Exception("Negative starting balance");
+      throw new Exception("Invalid starting balance");
     }
-    if(annualInterestRate !> 0)
+    if(annualInterestRate < 0)
     {
       throw new Exception("Negative interest rate");
     }
@@ -29,9 +29,9 @@ abstract class BankAccount
 
   public void add(double amount) throws Exception
   {
-    if(amount !> 0)
+    if(amount <= 0)
     {
-      throw new Exception("Negative monetary amount");
+      throw new Exception("Invalid monetary amount");
     }
 
     this.balance += amount;
@@ -72,9 +72,9 @@ abstract class BankAccount
 
   public void deduct(double amount) throws Exception
   {
-    if(amount !> 0)
+    if(amount <= 0)
     {
-      throw new Exception("Negative monetary amount");
+      throw new Exception("Invalid monetary amount");
     }
 
     this.balance -= amount;
@@ -83,5 +83,80 @@ abstract class BankAccount
   private void addWithdrawCount()
   {
     this.withdrawalCount++;
+  }
+
+  private void calcInterest() throws Exception
+  {
+    double monthlyInterestRate = (this.getAnnualInterestRate() / 12);
+    double monthlyInterestAmount = (monthlyInterestRate * this.getBalance());
+    double newBalance = (this.getBalance() + monthlyInterestAmount);
+    this.add(newBalance);
+  }
+
+  public double getAnnualInterestRate()
+  {
+    return this.annualInterestRate;
+  }
+
+  public void addPeriodServiceCharge(double amount) throws Exception
+  {
+    if(amount <= 0)
+    {
+      throw new Exception("Invalid monetary amount");
+    }
+    this.periodServiceCharge += amount;
+  }
+
+  public void waivePeriodServiceCharge(double amount) throws Exception
+  {
+    if(amount <= 0)
+    {
+      throw new Exception("Invalid monetary amount");
+    }
+    if(amount > this.getPeriodServiceCharge())
+    {
+      throw new Exception("Service charge deduction is greater than pending " +
+        "service charges");
+    }
+    this.periodServiceCharge -= amount;
+  }
+
+  public double getPeriodServiceCharge()
+  {
+    return this.periodServiceCharge;
+  }
+
+  public void monthlyProcess() throws Exception
+  {
+    this.deduct(this.getPeriodServiceCharge());
+    this.calcInterest();
+    this.resetWithdrawalCount();
+    this.resetDepositCount();
+    this.resetPeriodServiceCharge();
+  }
+
+  private void resetWithdrawalCount()
+  {
+    this.withdrawalCount = 0;
+  }
+
+  private void resetDepositCount()
+  {
+    this.depositCount = 0;
+  }
+
+  private void resetPeriodServiceCharge()
+  {
+    this.periodServiceCharge = 0;
+  }
+
+  public int getWithdrawalCount()
+  {
+    return this.withdrawalCount;
+  }
+
+  public int getDepositCount()
+  {
+    return this.depositCount;
   }
 }
