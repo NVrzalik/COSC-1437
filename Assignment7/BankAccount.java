@@ -87,10 +87,15 @@ abstract class BankAccount
 
   private void calcInterest() throws Exception
   {
+    System.out.println("Annual interest rate: " + this.getAnnualInterestRate());
     double monthlyInterestRate = (this.getAnnualInterestRate() / 12);
+    System.out.println("Monthly interest rate: " + monthlyInterestRate);
     double monthlyInterestAmount = (monthlyInterestRate * this.getBalance());
+    System.out.println("Monthly interest amount: " + monthlyInterestAmount);
     double newBalance = (this.getBalance() + monthlyInterestAmount);
-    this.add(newBalance);
+    System.out.println("New balance: " + newBalance);
+    this.add(monthlyInterestAmount);
+    System.out.println("New balance after this.add(): " + this.getBalance());
   }
 
   public double getAnnualInterestRate()

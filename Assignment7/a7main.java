@@ -6,7 +6,6 @@ class a7main
     private static final double MAX_STARTING_BALANCE = 20000.0;
     private static final double MIN_STARTING_BALANCE = 5.0;
     private static final double MAX_ANNUAL_INTEREST_RATE = .1;
-    private static final double MIN_ANNUAL_INTEREST_RATE = .0;
     private static final double MAX_TRANSACTION_AMOUNT = 1000.0;
 
     public static void main(String[] args)
@@ -30,9 +29,8 @@ class a7main
       startingBalance = ((int)(startingBalance * 100)) / 100;
       //Generate random interest rate
       double annualInterestRate =
-        ThreadLocalRandom.current().nextDouble(MIN_ANNUAL_INTEREST_RATE,
-          MAX_ANNUAL_INTEREST_RATE);
-      annualInterestRate = ((int)(annualInterestRate * 100)) / 100;
+        ThreadLocalRandom.current().nextDouble(MAX_ANNUAL_INTEREST_RATE);
+      //annualInterestRate = ((int)(annualInterestRate * 100)) / 100;
       //Instantiate SavingsAccount object
       SavingsAccount account = null;
       try
