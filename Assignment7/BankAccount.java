@@ -1,8 +1,8 @@
-/**This abstract class serves to simulate a generic bank account. It is intended
-to function as a blueprint and foundation for other real bank accounts of
-various types to be instantiated. It contains various public facing methods
-for object functionality, and multiple private access helper methods to
-modularize the code.*/
+/**This abstract class serves to simulate a generic bank account according to
+specifications provided for the assignment. It is intended to function as a
+blueprint and foundation for other real bank accounts of various types to be
+instantiated. It contains various public facing methods for object
+functionality, and multiple private helper methods to modularize the code.*/
 abstract class BankAccount
 {
   //The current balance of the account
