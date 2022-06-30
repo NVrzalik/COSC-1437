@@ -29,7 +29,7 @@ abstract class BankAccount
 
   public void add(double amount) throws Exception
   {
-    if(amount <= 0)
+    if(amount < 0)
     {
       throw new Exception("Invalid monetary amount");
     }
@@ -72,7 +72,7 @@ abstract class BankAccount
 
   public void deduct(double amount) throws Exception
   {
-    if(amount <= 0)
+    if(amount < 0)
     {
       throw new Exception("Invalid monetary amount");
     }

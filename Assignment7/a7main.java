@@ -5,8 +5,8 @@ class a7main
     private static final int NUMBER_OF_TRANSACTIONS = 10;
     private static final double MAX_STARTING_BALANCE = 20000.0;
     private static final double MIN_STARTING_BALANCE = 5.0;
-    private static final double MAX_ANNUAL_INTEREST_RATE = .1;
-    private static final double MAX_TRANSACTION_AMOUNT = 1000.0;
+    private static final double MAX_ANNUAL_INTEREST_RATE = .25;
+    private static final double MAX_TRANSACTION_AMOUNT = 10000.0;
 
     public static void main(String[] args)
     {
@@ -26,11 +26,11 @@ class a7main
       double startingBalance =
         ThreadLocalRandom.current().nextDouble(MIN_STARTING_BALANCE,
           MAX_STARTING_BALANCE);
-      startingBalance = ((int)(startingBalance * 100)) / 100;
+      startingBalance = ((int)(startingBalance * 100)) / 100.0;
       //Generate random interest rate
       double annualInterestRate =
         ThreadLocalRandom.current().nextDouble(MAX_ANNUAL_INTEREST_RATE);
-      //annualInterestRate = ((int)(annualInterestRate * 100)) / 100;
+      annualInterestRate = ((int)(annualInterestRate * 1000)) / 1000.0;
       //Instantiate SavingsAccount object
       SavingsAccount account = null;
       try
@@ -39,8 +39,8 @@ class a7main
       }
       catch(Exception e)
       {
-        System.out.println(startingBalance + " " + annualInterestRate);
         e.printStackTrace();
+        System.exit(1);
       }
       //Display account information
       System.out.println("A new savings account has been opened. The starting "
@@ -53,7 +53,7 @@ class a7main
     {
       double amount =
         ThreadLocalRandom.current().nextDouble(MAX_TRANSACTION_AMOUNT);
-      amount = ((int)(amount * 100)) / 100;
+      amount = ((int)(amount * 100)) / 100.0;
       if(getRandomBoolean())
       {
         //Make a deposit
