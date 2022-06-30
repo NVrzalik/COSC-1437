@@ -1,0 +1,68 @@
+Abstract class BankAccount
+*Fields
+** -balance : double
+** -depositCount : int
+** -withdrawalCount : int
+** -annualInterestRate : double
+** -periodServiceCharge : double
+
+*Methods
+** +BankAccount(double balance, double annualInterestRate) : void
+** +deposit(double amount) : void
+** +add(double amount) : void
+** -roundMoney(double amount) : double
+** -addDepositCount() : void
+** +withdraw(double amount) : void
+** -cannotWithdraw(double amount) : boolean
+** +getBalance() : double
+** +deduct(double amount) : void
+** -addWithdrawCount() : void
+** -calcInterest() : void
+** +getAnnualInterestRate() : double
+** +addPeriodServiceCharge(double amount) : void
+** +waivePeriodServiceCharge(double amount) : void
+** +getPeriodServiceCharge(): double
+** +monthlyProcess() : void
+** -resetWithdrawalCount() : void
+** -resetDepositCount() : void
+** -resetPeriodServiceCharge() : void
+** +getWithdrawalCount() : int
+** +getDepositCount() : int
+
+
+
+
+Class SavingsAccount extends BankAccount
+*Fields
+** -activeAccount : boolean
+** -MINIMUM_ACTIVE_BALANCE : final double
+** -FREE_WITHDRAWALS_PER_MONTH : final int
+** -WITHDRAWAL_SERVICE_CHARGE : final double
+
+*Methods
+** +SavingsAccount(double startingBalance, double annualInterestRate) : void
+** +isActive() : boolean
+** +withdraw(double amount) : void
+** -addServiceCharge() : void
+** +deposit(double amount) : void
+** +monthlyProcess() : void
+
+
+
+
+Class a7main
+*Fields
+** -NUMBER_OF_TRANSACTIONS : final int
+** -MAX_STARTING_BALANCE : final double
+** -MIN_STARTING_BALANCE : final double
+** -MAX_ANNUAL_INTEREST_RATE : final double
+** -MAX_TRANSACTION_AMOUNT : final double
+
+*Methods
+** +main(String[] args) : void
+** -generateAccount() : SavingsAccount
+** -makeTransaction(SavingsAccount account) : void
+** -getRandomBoolean() : boolean
+** -makeDeposit(SavingsAccount account, double amount) : void
+** -makeWithdrawal(SavingsAccount account, double amount) : void
+** -endMonth(SavingsAccount account) : void
