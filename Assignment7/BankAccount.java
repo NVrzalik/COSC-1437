@@ -8,6 +8,7 @@ abstract class BankAccount
 
   public BankAccount(double balance, double annualInterestRate) throws Exception
   {
+    balance = this.roundMoney(balance);
     if(balance <= 0)
     {
       throw new Exception("Invalid starting balance");
@@ -33,8 +34,15 @@ abstract class BankAccount
     {
       throw new Exception("Invalid monetary amount");
     }
-
+    amount = roundMoney(amount);
     this.balance += amount;
+    this.balance = this.roundMoney(this.balance);
+  }
+
+  private double roundMoney(double amount)
+  {
+    amount = (Math.round(amount * 100) / 100.0);
+    return amount;
   }
 
   private void addDepositCount()
@@ -76,8 +84,9 @@ abstract class BankAccount
     {
       throw new Exception("Invalid monetary amount");
     }
-
+    amount = this.roundMoney(amount);
     this.balance -= amount;
+    this.balance = this.roundMoney(this.balance);
   }
 
   private void addWithdrawCount()
@@ -87,15 +96,9 @@ abstract class BankAccount
 
   private void calcInterest() throws Exception
   {
-    System.out.println("Annual interest rate: " + this.getAnnualInterestRate());
     double monthlyInterestRate = (this.getAnnualInterestRate() / 12);
-    System.out.println("Monthly interest rate: " + monthlyInterestRate);
     double monthlyInterestAmount = (monthlyInterestRate * this.getBalance());
-    System.out.println("Monthly interest amount: " + monthlyInterestAmount);
-    double newBalance = (this.getBalance() + monthlyInterestAmount);
-    System.out.println("New balance: " + newBalance);
     this.add(monthlyInterestAmount);
-    System.out.println("New balance after this.add(): " + this.getBalance());
   }
 
   public double getAnnualInterestRate()
@@ -105,16 +108,18 @@ abstract class BankAccount
 
   public void addPeriodServiceCharge(double amount) throws Exception
   {
-    if(amount <= 0)
+    if(amount < 0)
     {
       throw new Exception("Invalid monetary amount");
     }
+    amount = this.roundMoney(amount);
     this.periodServiceCharge += amount;
+    this.periodServiceCharge = this.roundMoney(this.periodServiceCharge);
   }
 
   public void waivePeriodServiceCharge(double amount) throws Exception
   {
-    if(amount <= 0)
+    if(amount < 0)
     {
       throw new Exception("Invalid monetary amount");
     }
@@ -123,7 +128,9 @@ abstract class BankAccount
       throw new Exception("Service charge deduction is greater than pending " +
         "service charges");
     }
+    amount = this.roundMoney(amount);
     this.periodServiceCharge -= amount;
+    this.periodServiceCharge = this.roundMoney(this.periodServiceCharge);
   }
 
   public double getPeriodServiceCharge()
