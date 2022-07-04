@@ -1,3 +1,18 @@
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.geometry.Pos;
+import javafx.geometry.Insets;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
+
 public class a8main extends Application
 {
   private TextField minutesField;
@@ -76,7 +91,26 @@ public class a8main extends Application
 
     private void calculate(int rate)
     {
-      
+      double callLength = 0;
+      try
+      {
+        this.callLength = Double.parseDouble(minutesField.getText());
+      }
+      catch(Exception e)
+      {
+        this.callLength = null;
+        JOptionPane.showMessageDialog(null, "Please enter a valid time " +
+          "amount for the call's duration.");
+      }
+
+      if(this.callLength != null)
+      {
+        this.callLength = Math.ceil(this.callLength);
+        int cents = this.callLength * rate;
+        double price = (cents / 100.0);
+        String result = String.format("This call costs $%,.2f.", price);
+        JOptionPane.showMessageDialog(null, result);
+      }
     }
   }
 }
