@@ -43,7 +43,7 @@ public class CalculatePanel extends JPanel
       catch(Exception e)
       {
         JOptionPane.showMessageDialog(null, "Please enter the duration of the" +
-          "call in minutes.");
+          " call in minutes.");
         return;
       }
 
