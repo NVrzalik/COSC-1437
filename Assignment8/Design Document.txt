@@ -1,0 +1,41 @@
+Class RatePanel
+*Fields
+** -DAYTIME_RATE_PER_MIN : final int
+** -EVENING_RATE_PER_MIN : final int
+** -OFF_PEAK_RATE_PER_MIN : final int
+** -daytime : JRadioButton
+** -evening : JRadioButton
+** -offPeak : JRadioButton
+
+*Methods
+** +RatePanel() : void
+** +getRate() : int
+
+
+Class MinutesPanel
+*Fields
+** -minutesField : JTextField
+
+*Methods
+** +MinutesPanel() : void
+** +getMinutes() : int
+
+
+Class CalculatePanel
+*Fields
+** -ratePanel : RatePanel
+** -minutesPanel : MinutesPanel
+
+*Methods
+** +CalculatePanel(RatePanel, MinutesPanel) : void
+
+*Private Inner Class
+** Class CalculateButtonListener (implements ActionListener)
+***Methods
+**** +actionPerformed(ActionEvent) : void
+
+
+Class a8main
+*Methods
+** +a8main() : void
+** +main(String[]) : void
