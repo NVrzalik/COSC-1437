@@ -12,9 +12,9 @@ public class RatePanel extends JPanel
   private final int EVENING_RATE_PER_MIN = 12;
   private final int OFF_PEAK_RATE_PER_MIN = 5;
   //Radio buttons
-  JRadioButton daytime;
-  JRadioButton evening;
-  JRadioButton offPeak;
+  private JRadioButton daytime;
+  private JRadioButton evening;
+  private JRadioButton offPeak;
 
   /**Constructor method to create the panel.*/
   public RatePanel()
