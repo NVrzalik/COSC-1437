@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**This class creates a panel that holds the Long Distance Call Calculator's
+call rate options. It provides a group of radio buttons that allow the user to
+select a call option. It also contains a public method to return the value of
+the user's selection.*/
 public class RatePanel extends JPanel
 {
   private final int DAYTIME_RATE_PER_MIN = 7;
