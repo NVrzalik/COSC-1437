@@ -1,19 +1,7 @@
-import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.geometry.Pos;
-import javafx.geometry.Insets;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.event.EventHandler;
-import javafx.event.ActionEvent;
+import javax.swing.*;
+import java.awt.*;
 
-public class a8main extends Application
+public class a8main extends JFrame
 {
   private TextField minutesField;
   private RadioButton daytime;
