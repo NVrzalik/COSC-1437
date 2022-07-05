@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.*;
 import java.awt.*;
 
 public class CalculatePanel extends JPanel
@@ -17,7 +18,7 @@ public class CalculatePanel extends JPanel
     add(calculateButton);
   }
 
-  public class CalculateButtonListener implements ActionListener
+  private class CalculateButtonListener implements ActionListener
   {
 
     public void actionPerformed(ActionEvent event)

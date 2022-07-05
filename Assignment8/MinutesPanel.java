@@ -35,6 +35,7 @@ public class MinutesPanel extends JPanel
       throw new Exception("Negative input");
     }
 
-    int minutes = Math.ceil(fractionalMinutes);
+    int minutes = (int)Math.ceil(fractionalMinutes);
     return minutes;
   }
+}

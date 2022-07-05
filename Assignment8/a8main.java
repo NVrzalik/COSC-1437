@@ -3,10 +3,10 @@ import java.awt.*;
 
 public class a8main extends JFrame
 {
-  private TextField minutesField;
-  private RadioButton daytime;
-  private RadioButton evening;
-  private RadioButton offPeak;
+  //private JTextField minutesField;
+  //private JRadioButton daytime;
+  //private JRadioButton evening;
+  //private JRadioButton offPeak;
 
   public a8main()
   {
@@ -27,6 +27,6 @@ public class a8main extends JFrame
 
   public static void main(String[] args)
   {
-    a8main();
+    new a8main();
   }
 }
