@@ -7,13 +7,16 @@ select a call option. It also contains a public method to return the value of
 the user's selection.*/
 public class RatePanel extends JPanel
 {
+  //The call rate options in cents per minute
   private final int DAYTIME_RATE_PER_MIN = 7;
   private final int EVENING_RATE_PER_MIN = 12;
   private final int OFF_PEAK_RATE_PER_MIN = 5;
+  //Radio buttons
   JRadioButton daytime;
   JRadioButton evening;
   JRadioButton offPeak;
 
+  /**Constructor method to create the panel.*/
   public RatePanel()
   {
     setLayout(new GridLayout(4, 1));
@@ -35,6 +38,9 @@ public class RatePanel extends JPanel
     add(offPeak);
   }
 
+  /**Public method to return the user's selection. If no selection has been
+  made, an exception is thrown.
+  @return The rate of the user's call in cents per minute.*/
   public int getRate() throws Exception
   {
     if(daytime.isSelected())
