@@ -49,6 +49,6 @@ public class RatePanel extends JPanel
     {
       throw new Exception("No rate selected");
     }
-    return 0;
+    return -1;
   }
 }
