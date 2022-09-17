@@ -71,7 +71,7 @@ class a7main
     /**Helper method the generate random account transactions. It determines a
     random monetary amount for the transaction, and then randomnly determines
     whether a deposit or a withdrawal is to be performed, calling the necessary
-    method to perform it
+    method to perform it.
     @param account The savings account in which the transactions are to be
     performed.*/
     private static void makeTransaction(SavingsAccount account)
